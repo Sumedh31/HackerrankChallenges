@@ -3,8 +3,8 @@
 # 
 # @author: Sumedh.Tambe
 # '''
-# import sys
-# from pip._vendor.distlib.compat import raw_input
+import sys
+from pip._vendor.distlib.compat import raw_input
 # n=int(raw_input())
 # if(2<=n<=10):
 #     inputitems= raw_input().split()
@@ -31,25 +31,27 @@
     
          
         
-# n=int(raw_input())
-# if(2<n<10):
-#     inputitems= raw_input().split()
-#     List=list(map(int,inputitems))    
+n=int(raw_input())
+if(2<n<10):
+    inputitems= raw_input().split()
+    List=list(map(int,inputitems))    
 highest=-100
 secondhighest=-100   
-List=(3,6,25)
+#List=(3,6,25)
 for index, item in enumerate(List):
-    print("listelement =" + str(List[index]))
+    #print("listelement =" + str(List[index]))
     if(-100<List[index]<100):
          
         if(List[index]>=secondhighest):
                        
-            if(List[index]>highest):
+            if(List[index]>=highest):
                 
+                highest=List[index]
+            if(List[index]>highest):
                 highest,secondhighest=List[index],highest
             else:
                 secondhighest=List[index]
-         
+print(secondhighest)    
 #          else:
 #              if(secondhighest<List[index]<highest):
 #                  secondhighest=List[index]

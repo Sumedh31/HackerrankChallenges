@@ -12,8 +12,12 @@ secondlowest=float("inf")
 for index, i in enumerate(range(len(list1))):
     if(format(float(list1[index][1]),'.4f')<format(float(secondlowest),'.4f')):
         if(format(float(list1[index][1]),'.4f')<format(float(lowest),'.4f')):
-            lowest,secondlowest=format(float(list1[index][1]),'.4f'),format(float(lowest),'.4f')
-        else:
+            lowest=format(float(list1[index][1]),'.4f')
+        elif(float(list1[index][1])==float(lowest)):
+            pass
+        elif(float(secondlowest)==float("inf")):
+            secondlowest=format(float(lowest))
+        elif(float(lowest)<float(list1[index][1])<float(secondlowest)):
             secondlowest=format(float(list1[index][1]),'.4f')
 
 #print(list1[index][0] for index, i in enumerate(range(len(list1))) if(float(list1[index][1])==float(secondlowest)))
